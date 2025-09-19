@@ -8,10 +8,10 @@ import java.util.Scanner;
  * @author CT Reatherford
  *
  */
-public class Conversion
+public class Conversions
 {
   /**
-   * TODO: Receives input from user finish these comments
+   * Prompts the user for input and then performs calculations for conversion of measurements. 
    *
    * @param args          Not used 
    *
@@ -21,6 +21,7 @@ public class Conversion
     Scanner input = new Scanner(System.in);
 
 
+    // Get US or Metric choice.
     System.out.println("Which conversion do you want to perform? (type in \"1\" or \"2\")");
     System.out.println("1: US to Metric");
     System.out.println("2: Metric to US");
@@ -30,6 +31,7 @@ public class Conversion
     
     if (choiceConvert == 1)
     {
+      // Get conversion type.
       System.out.println("Which type of measurement do you want to perform? (type in \"1\", \"2\", \"3\", or \"4\")");
       System.out.println("1. Length");
       System.out.println("2. Fluid Volume");
@@ -41,6 +43,7 @@ public class Conversion
       
         switch (typeMeasure)
         {
+          // Lenth conversion choices.
           case 1:
             System.out.println("Which length do you want to convert? (type in \"1\", \"2\", or \"3\")");
             System.out.println("1. Inches to Centimeters");
@@ -88,7 +91,7 @@ public class Conversion
              }
              break;
          
-            
+          // Fluid volume conversions input.  
           case 2:
             System.out.println("Which fluid volume do you want to convert? (type in \"1\" or \"2\")");
             System.out.println("1: Fluid ounces to Milliliters");
@@ -120,11 +123,12 @@ public class Conversion
                 break;
                 
               default:
-                System.out.printf("%d is not a valid operator.%n", whichVolume);
+                System.out.printf("%d is not a valid choice.%n", whichVolume);
                 break;
             }
             break;
           
+          // Mass conversions input.
           case 3:
             System.out.println("Which mass do you want to convert? (type in \"1\" or \"2\")");
             System.out.println("1: Ounces to Grams");
@@ -156,12 +160,12 @@ public class Conversion
                   break;
                   
                 default:
-                  System.out.printf("%d is not a valid operator.%n", whichMass);
+                  System.out.printf("%d is not a valid choice.%n", whichMass);
                   break;
               }
               break;
         
-        
+          // Full temperature conversions Fahrenheit to Celsius and Celsius to Fahrenheit 
           case 4:
             System.out.println("Which temperature do you want to convert? (type in \"1\" or \"2\")");
             System.out.println("1: Fahrenheit to Celsius");
@@ -193,7 +197,7 @@ public class Conversion
                   break;
                   
                 default:
-                  System.out.printf("%d is not a valid operator.%n", whichTemp);
+                  System.out.printf("%d is not a valid choice.%n", whichTemp);
                   break;
           
           default:
@@ -206,7 +210,6 @@ public class Conversion
     else if (choiceConvert == 2)
     {
       // Metric to US conversion.
-      
         System.out.println("Which type of measurement do you want to perform? (type in \"1\", \"2\", or \"3\")");
         System.out.println("1. Length");
         System.out.println("2. Fluid Volume");
@@ -217,6 +220,7 @@ public class Conversion
         
           switch (typeMeasure)
           {
+            // Length conversion input
             case 1:
               System.out.println("Which length do you want to convert? (type in \"1\", \"2\", or \"3\")");
               System.out.println("1. Centimeters to Inches ");
@@ -259,11 +263,12 @@ public class Conversion
                   break;
             
                 default:
-                  System.out.printf("%d is not a valid operator.%n", whichLength);
+                  System.out.printf("%d is not a valid choice.%n", whichLength);
                   break;
             }
             break;
-
+            
+            // Fluid volume conversion input
             case 2:
               System.out.println("Which fluid volume do you want to convert? (type in \"1\" or \"2\")");
               System.out.println("1: Milliliters to Fluid Ounces");
@@ -295,11 +300,11 @@ public class Conversion
                   break;
                   
                 default:
-                  System.out.printf("%d is not a valid operator.%n", whichVolume);
+                  System.out.printf("%d is not a valid choice.%n", whichVolume);
                   break;
               }
               break;
-                  
+            // Mass conversion input       
             case 3:
               System.out.println("Which mass do you want to convert? (type in \"1\" or \"2\")");
               System.out.println("1: Grams to Ounces");
@@ -331,7 +336,7 @@ public class Conversion
                     break;
                     
                   default:
-                    System.out.printf("%d is not a valid operator.%n", whichMass);
+                    System.out.printf("%d is not a valid choice.%n", whichMass);
                     break;
             
             default:
@@ -347,7 +352,7 @@ public class Conversion
       // Handle invalid input
       System.out.println("Invalid choice. Please enter 1 or 2.");
     }
-
+    // Close scanner.
     input.close();
 }
 }
