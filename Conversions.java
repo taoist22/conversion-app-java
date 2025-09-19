@@ -1,3 +1,6 @@
+package edu.hawaii.ics111.h04;
+
+import java.util.Scanner;
 
 /**
  * A Conversion program in java
@@ -215,7 +218,130 @@ public class Conversion
     else if (choiceConvert == 2)
     {
       // Metric to US conversion.
+      {
+        System.out.println("Which type of measurement do you want to perform? (type in \"1\", \"2\", \"3\", or \"4\")");
+        System.out.println("1. Length");
+        System.out.println("2. Fluid Volume");
+        System.out.println("3. Mass");
+        System.out.println("4. Temperature");
+    
+        int typeMeasure = input.nextInt();
+        input.nextLine();
         
+          switch (typeMeasure)
+          {
+            case 1:
+              System.out.println("Which length do you want to convert? (type in \"1\", \"2\", or \"3\")");
+              System.out.println("1. Centimeters to Inches ");
+              System.out.println("2. Meters to Feet");
+              System.out.println("3. Kilometers to Miles");
+              
+              int whichLength = input.nextInt();
+              input.nextLine();
+              
+              switch (whichLength)
+              {
+                case 1:
+                  System.out.println("What is the value you want to convert?");
+                  
+                  double centimetersValue = input.nextDouble();
+                  input.nextLine();
+                  
+                  resultInches = centimetersValue / 2.54;
+                  System.out.printf("%f centimeters is %f inches%n", centimetersValue, resultInches);
+                  break;
+            
+                case 2:
+                  System.out.println("What is the value you want to convert?");
+                  
+                  double metersValue = input.nextDouble();
+                  input.nextLine();
+                  
+                  resultFeet = metersValue * 3.28084;
+                  System.out.printf("%f meters is %f feet%n", metersValue, resultFeet);
+                  break;
+            
+                case 3:
+                  System.out.println("What is the value you want to convert?");
+                  
+                  double kilometersValue = input.nextDouble();
+                  input.nextLine();
+                  
+                  resultMiles = kilometersValue * 0.621371;
+                  System.out.printf("%f kilometers is %f miles%n", kilometersValue, resultFeet);
+                  break;
+            
+                default:
+                  System.out.printf("%d is not a valid operator.%n", whichLength);
+              }
+              
+            case 2:
+              System.out.println("Which fluid volume do you want to convert? (type in \"1\" or \"2\")");
+              System.out.println("1: Milliliters to Fluid Ounces");
+              System.out.println("2: Liters to Gallons");
+              
+              int whichVolume = input.nextInt();
+              input.nextLine();
+              
+              switch (whichVolume)
+              {
+                case 1:
+                  System.out.println("What is the value you want to convert?");
+                  
+                  double millitersValue = input.nextDouble();
+                  input.nextLine();
+                  
+                  resultFluidOunces = milliltersValue * 0.033814;
+                  System.out.printf("%f milliliters is %f fluid ounces%n", millilitersValue, resultFluidOunces);
+                  break;
+            
+                case 2:
+                  System.out.println("What is the value you want to convert?");
+                  
+                  double litersValue = input.nextDouble();
+                  input.nextLine();
+                  
+                  resultGallons = litersValue * 0.264172;
+                  System.out.printf("%f liters is %f gallons%n", litersValue, resultGallons);
+                  break;
+                  
+                default:
+                  System.out.printf("%d is not a valid operator.%n", whichVolume);
+                  
+          case 3:
+            System.out.println("Which mass do you want to convert? (type in \"1\" or \"2\")");
+            System.out.println("1: Grams to Ounces");
+            System.out.println("2: Kilograms to Pounds");
+              
+            int whichMass = input.nextInt();
+            input.nextLine();
+              
+              switch (whichMass)
+              {
+                case 1:
+                  System.out.println("What is the value you want to convert?");
+                  
+                  double gramsValue = input.nextDouble();
+                  input.nextLine();
+                  
+                  resultOunces = gramsValue * 0.035274;
+                  System.out.printf("%f grams is %f ounces%n", gramsValue, resultOunces);
+                  break;
+            
+                case 2:
+                  System.out.println("What is the value you want to convert?");
+                  
+                  double kilogramsValue = input.nextDouble();
+                  input.nextLine();
+                  
+                  resultPounds = kilogramsValue * 2.20462;
+                  System.out.printf("%f kilograms is %f pounds%n", kilogramsValue, resultPounds);
+                  break;
+                  
+                default:
+                  System.out.printf("%d is not a valid operator.%n", whichMass);
+          
+        }
 
     }
     else
@@ -224,5 +350,5 @@ public class Conversion
       System.out.println("Invalid choice. Please enter 1 or 2.");
     }
 
-  }
-
+    input.close();
+}
