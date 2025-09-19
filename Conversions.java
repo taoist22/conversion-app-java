@@ -20,30 +20,6 @@ public class Conversion
   {
     Scanner input = new Scanner(System.in);
 
-    // Length variables
-//    double resultCentimeters = 0;
-//    double resultMeters = 0;
-//    double resultKilometers = 0;
-//    double resultInches = 0;
-//    double resultFeet = 0;
-//    double resultMiles = 0;
-//
-//    // Volume variables
-//    double resultMilliliters = 0;
-//    double resultLiters = 0;
-//    double resultFluidOunces = 0;
-//    double resultPounds = 0;
-//
-//    // Mass Variables
-//    double resultGrams = 0;
-//    double resultKilograms = 0;
-//    double resultOunces = 0;
-//
-//    // Temperature variables
-//    double resultCelsius = 0;
-//    double resultFahrenheit = 0;
-    
-  
 
     System.out.println("Which conversion do you want to perform? (type in \"1\" or \"2\")");
     System.out.println("1: US to Metric");
@@ -107,10 +83,11 @@ public class Conversion
                 break;
           
               default:
-                System.out.printf("%d is not a valid operator.%n", whichLength);
+                System.out.printf("%d is not a valid option.%n", whichLength);
                 break;
-          break;
-          }
+             }
+             break;
+         
             
           case 2:
             System.out.println("Which fluid volume do you want to convert? (type in \"1\" or \"2\")");
@@ -145,8 +122,8 @@ public class Conversion
               default:
                 System.out.printf("%d is not a valid operator.%n", whichVolume);
                 break;
-
-          break;
+            }
+            break;
           
           case 3:
             System.out.println("Which mass do you want to convert? (type in \"1\" or \"2\")");
@@ -180,59 +157,60 @@ public class Conversion
                   
                 default:
                   System.out.printf("%d is not a valid operator.%n", whichMass);
-                  break
+                  break;
+              }
+              break;
         
-          break;
         
-       }
-      
-        
-            case 4:
-              System.out.println("Which temperature do you want to convert? (type in \"1\" or \"2\")");
-              System.out.println("1: Fahrenheit to Celsius");
-              System.out.println("2: Celsius to Fahrenheit");
-                
-              int whichTemp = input.nextInt();
-              input.nextLine();
-                
-                switch (whichTemp)
-                {
-                  case 1:
-                    System.out.println("What is the value you want to convert?");
-                    
-                    double ftempValue = input.nextDouble();
-                    input.nextLine();
-                    
-                    double resultCelsius = (ftempValue - 32) * (5.0/9.0);
-                    System.out.printf("%f degrees Fahrenheit is %f degrees Celsius%n", ftempValue, resultCelsius);
-                    break;
+          case 4:
+            System.out.println("Which temperature do you want to convert? (type in \"1\" or \"2\")");
+            System.out.println("1: Fahrenheit to Celsius");
+            System.out.println("2: Celsius to Fahrenheit");
               
-                  case 2:
-                    System.out.println("What is the value you want to convert?");
-                    
-                    double ctempValue = input.nextDouble();
-                    input.nextLine();
-                    
-                    double resultFahrenheit = ((9.0/5.0) * ctempValue) + 32;
-                    System.out.printf("%f degrees Celsius is %f degrees Fahrenheit%n", ctempValue, resultFahrenheit);
-                    break;
-                    
-                  default:
-                    System.out.printf("%d is not a valid operator.%n", whichTemp);
-                    break;
+            int whichTemp = input.nextInt();
+            input.nextLine();
+              
+              switch (whichTemp)
+              {
+                case 1:
+                  System.out.println("What is the value you want to convert?");
+                  
+                  double ftempValue = input.nextDouble();
+                  input.nextLine();
+                  
+                  double resultCelsius = (ftempValue - 32) * (5.0/9.0);
+                  System.out.printf("%f degrees Fahrenheit is %f degrees Celsius%n", ftempValue, resultCelsius);
+                  break;
             
-          }
+                case 2:
+                  System.out.println("What is the value you want to convert?");
+                  
+                  double ctempValue = input.nextDouble();
+                  input.nextLine();
+                  
+                  double resultFahrenheit = ((9.0/5.0) * ctempValue) + 32;
+                  System.out.printf("%f degrees Celsius is %f degrees Fahrenheit%n", ctempValue, resultFahrenheit);
+                  break;
+                  
+                default:
+                  System.out.printf("%d is not a valid operator.%n", whichTemp);
+                  break;
+          
+          default:
+            System.out.printf("%d is not a valid measurement type.%n, typeMeasure");
+             break;
+        }
+        break;
 
     }
     else if (choiceConvert == 2)
     {
       // Metric to US conversion.
       
-        System.out.println("Which type of measurement do you want to perform? (type in \"1\", \"2\", \"3\", or \"4\")");
+        System.out.println("Which type of measurement do you want to perform? (type in \"1\", \"2\", or \"3\")");
         System.out.println("1. Length");
         System.out.println("2. Fluid Volume");
         System.out.println("3. Mass");
-        System.out.println("4. Temperature");
     
         int typeMeasure = input.nextInt();
         input.nextLine();
@@ -283,8 +261,9 @@ public class Conversion
                 default:
                   System.out.printf("%d is not a valid operator.%n", whichLength);
                   break;
-              }
-              
+            }
+            break;
+
             case 2:
               System.out.println("Which fluid volume do you want to convert? (type in \"1\" or \"2\")");
               System.out.println("1: Milliliters to Fluid Ounces");
@@ -318,43 +297,50 @@ public class Conversion
                 default:
                   System.out.printf("%d is not a valid operator.%n", whichVolume);
                   break;
+              }
+              break;
                   
-          case 3:
-            System.out.println("Which mass do you want to convert? (type in \"1\" or \"2\")");
-            System.out.println("1: Grams to Ounces");
-            System.out.println("2: Kilograms to Pounds");
+            case 3:
+              System.out.println("Which mass do you want to convert? (type in \"1\" or \"2\")");
+              System.out.println("1: Grams to Ounces");
+              System.out.println("2: Kilograms to Pounds");
+                
+              int whichMass = input.nextInt();
+              input.nextLine();
+                
+                switch (whichMass)
+                {
+                  case 1:
+                    System.out.println("What is the value you want to convert?");
+                    
+                    double gramsValue = input.nextDouble();
+                    input.nextLine();
+                    
+                    double resultOunces = gramsValue * 0.035274;
+                    System.out.printf("%f grams is %f ounces%n", gramsValue, resultOunces);
+                    break;
               
-            int whichMass = input.nextInt();
-            input.nextLine();
-              
-              switch (whichMass)
-              {
-                case 1:
-                  System.out.println("What is the value you want to convert?");
-                  
-                  double gramsValue = input.nextDouble();
-                  input.nextLine();
-                  
-                  double resultOunces = gramsValue * 0.035274;
-                  System.out.printf("%f grams is %f ounces%n", gramsValue, resultOunces);
-                  break;
+                  case 2:
+                    System.out.println("What is the value you want to convert?");
+                    
+                    double kilogramsValue = input.nextDouble();
+                    input.nextLine();
+                    
+                    double resultPounds = kilogramsValue * 2.20462;
+                    System.out.printf("%f kilograms is %f pounds%n", kilogramsValue, resultPounds);
+                    break;
+                    
+                  default:
+                    System.out.printf("%d is not a valid operator.%n", whichMass);
+                    break;
             
-                case 2:
-                  System.out.println("What is the value you want to convert?");
-                  
-                  double kilogramsValue = input.nextDouble();
-                  input.nextLine();
-                  
-                  double resultPounds = kilogramsValue * 2.20462;
-                  System.out.printf("%f kilograms is %f pounds%n", kilogramsValue, resultPounds);
-                  break;
-                  
-                default:
-                  System.out.printf("%d is not a valid operator.%n", whichMass);
-                  break;
-          
+            default:
+              System.out.printf("%d is not a valid measurement type.%n, typeMeasure");
+               break;
+            
+         }
+         break;
         }
-
     }
     else
     {
@@ -363,4 +349,5 @@ public class Conversion
     }
 
     input.close();
+}
 }
