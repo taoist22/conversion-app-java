@@ -199,12 +199,15 @@ public class Conversions
                 default:
                   System.out.printf("%d is not a valid choice.%n", whichTemp);
                   break;
-          
+
+               }
+               break;
+
           default:
             System.out.printf("%d is not a valid measurement type.%n, typeMeasure");
-             break;
-        }
-        break;
+              break;
+      }
+           
 
     }
     else if (choiceConvert == 2)
@@ -285,8 +288,8 @@ public class Conversions
                   double millitersValue = input.nextDouble();
                   input.nextLine();
                   
-                  double resultFluidOunces = millilitersValue * 0.033814;
-                  System.out.printf("%f milliliters is %f fluid ounces%n", millilitersValue, resultFluidOunces);
+                  double resultFluidOunces = millitersValue * 0.033814;
+                  System.out.printf("%f milliliters is %f fluid ounces%n", millitersValue, resultFluidOunces);
                   break;
             
                 case 2:
@@ -338,13 +341,12 @@ public class Conversions
                   default:
                     System.out.printf("%d is not a valid choice.%n", whichMass);
                     break;
-            
+        
+                }
+                break;
             default:
-              System.out.printf("%d is not a valid measurement type.%n, typeMeasure");
-               break;
-            
-         }
-         break;
+              System.out.println("%d is not a valid measurement choice.%n, typeMeasure");
+              break;
         }
     }
     else
